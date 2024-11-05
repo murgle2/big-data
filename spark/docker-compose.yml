@@ -1,0 +1,7 @@
+services:
+  spark:
+    image: apache/spark-py:v3.3.0
+    volumes:
+      - ./resources:/opt/spark/work-dir/resources
+      - ./scripts:/opt/spark/work-dir/scripts
+    command: /opt/spark/bin/spark-submit /opt/spark/work-dir/scripts/ratings-counter.py
